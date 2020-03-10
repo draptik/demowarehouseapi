@@ -1,3 +1,4 @@
+using DemoWareHouseApi.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,8 @@ namespace DemoWareHouseApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCustomSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,6 +35,8 @@ namespace DemoWareHouseApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCustomSwagger();
 
             app.UseAuthorization();
 
