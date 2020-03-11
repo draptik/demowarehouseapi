@@ -23,7 +23,7 @@ namespace DemoWareHouseApi
             // https://docs.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-3.1
             services
                 .AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
-                .AddCertificate();
+                .AddCertificate(options => options.AllowedCertificateTypes = CertificateTypes.All);
 
             services.AddControllers();
 
