@@ -20,10 +20,14 @@ namespace DemoWareHouseApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Authentication
             // https://docs.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-3.1
             services
                 .AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
-                .AddCertificate(options => options.AllowedCertificateTypes = CertificateTypes.All);
+                .AddCertificate(options =>
+                {
+                    options.AllowedCertificateTypes = CertificateTypes.SelfSigned;
+                });
 
             services.AddControllers();
 
