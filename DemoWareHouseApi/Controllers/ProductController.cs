@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using DemoWareHouseApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoWareHouseApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         // GET: api/Product
