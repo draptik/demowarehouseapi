@@ -7,7 +7,7 @@ namespace DemoWareHouseApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProductController : ControllerBase
     {
         // GET: api/Product
