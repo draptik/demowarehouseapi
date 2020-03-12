@@ -22,12 +22,12 @@ namespace DemoWareHouseApi
         {
             // Authentication
             // https://docs.microsoft.com/en-us/aspnet/core/security/authentication/certauth?view=aspnetcore-3.1
-            services
-                .AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
-                .AddCertificate(options =>
-                {
-                    options.AllowedCertificateTypes = CertificateTypes.SelfSigned;
-                });
+            //services
+            //    .AddAuthentication(CertificateAuthenticationDefaults.AuthenticationScheme)
+            //    .AddCertificate(options =>
+            //    {
+            //        options.AllowedCertificateTypes = CertificateTypes.SelfSigned;
+            //    });
 
             services.AddControllers();
 
