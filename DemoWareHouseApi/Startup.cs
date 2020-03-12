@@ -42,7 +42,7 @@ namespace DemoWareHouseApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseAuthentication();
+            //app.UseAuthentication();
 
             app.UseHttpsRedirection();
 
