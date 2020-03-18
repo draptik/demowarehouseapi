@@ -48,7 +48,18 @@ steps:
     displayName: 'Publish Artifact: drop'
     condition: succeeded()
 
-
+  - task: AzureRmWebAppDeployment@4
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'Redheads Azure'
+      appType: 'webAppLinux'
+      WebAppName: 'DemoWareHouseApi20200311095751'
+      deployToSlotOrASE: true
+      ResourceGroupName: 'demo4'
+      SlotName: 'production'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+      RuntimeStack: 'DOTNETCORE|Latest'
+      StartupCommand: 'dotnet run'
 
 # - task: NuGetToolInstaller@1
 
